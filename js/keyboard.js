@@ -1,7 +1,4 @@
-//import keyboard from "./js/keyboard.js";
-//keyboard();
-//console.log(KeyK)
-
+export default function keyboard () {
 //Заголовок
 let header = document.createElement('h1');
 header.className = "keyboard-header"
@@ -421,4 +418,5 @@ let howToChLang = document.createElement('p');
 howToChLang.className = "howToChLang"
 howToChLang.innerHTML = "Для смены языка нажмите левые shift + ctrl"
 document.body.append(howToChLang);
+}
 
