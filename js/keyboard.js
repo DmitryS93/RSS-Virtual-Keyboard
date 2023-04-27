@@ -1,4 +1,11 @@
+import keysArray from "./keysArray.js";
+import {i} from "../index.js";
+
 export default function keyboard () {
+
+const arrayCapAndLang = ["ruSmall", "ruCap", "enSmall", "enCap"]
+let b = arrayCapAndLang[i]
+
 //Заголовок
 let header = document.createElement('h1');
 header.className = "keyboard-header"
@@ -23,7 +30,8 @@ document.body.append(keyboard);
 let Backquote = document.createElement('div');
 Backquote.className = "button-standard"
 Backquote.id = "BackquoteId"
-Backquote.innerHTML = "ё"
+//Backquote.innerHTML = "ё"
+Backquote.innerHTML = `${keysArray[0][arrayCapAndLang[i]]}`
 keyboardId.append(Backquote);
 //1
 let Digit1 = document.createElement('div');
@@ -40,7 +48,7 @@ keyboardId.append(Digit2);
 //3
 let Digit3 = document.createElement('div');
 Digit3.className = "button-standard"
-Digit3.id = "Digit2Id"
+Digit3.id = "Digit3Id"
 Digit3.innerHTML = "3"
 keyboardId.append(Digit3);
 //4
@@ -133,7 +141,7 @@ keyboardId.append(KeyE);
 let KeyR = document.createElement('div');
 KeyR.className = "button-standard"
 KeyR.id = "KeyRId"
-KeyR.innerHTML = "у"
+KeyR.innerHTML = "к"
 keyboardId.append(KeyR);
 //е
 let KeyT = document.createElement('div');
@@ -317,7 +325,7 @@ keyboardId.append(KeyB);
 let KeyN = document.createElement('div');
 KeyN.className = "button-standard"
 KeyN.id = "KeyNId"
-KeyN.innerHTML = "n"
+KeyN.innerHTML = "т"
 keyboardId.append(KeyN);
 //ь
 let KeyM = document.createElement('div');
@@ -419,4 +427,5 @@ howToChLang.className = "howToChLang"
 howToChLang.innerHTML = "Для смены языка нажмите левые shift + ctrl"
 document.body.append(howToChLang);
 }
+
 

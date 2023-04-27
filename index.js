@@ -1,7 +1,17 @@
-//import keyboard from "./js/keyboard.js";
-//keyboard();
-//console.log(KeyK)
+import keyboard from "./js/keyboard.js";
+import rebuilder from "./js/rebuilder.js";
+//import {i2} from "./js/i.js";
 
+let i = 0;
+function i2() {
+    return i = 2
+}
+export {i};
+
+
+keyboard();
+
+/*
 //Заголовок
 let header = document.createElement('h1');
 header.className = "keyboard-header"
@@ -43,7 +53,7 @@ keyboardId.append(Digit2);
 //3
 let Digit3 = document.createElement('div');
 Digit3.className = "button-standard"
-Digit3.id = "Digit2Id"
+Digit3.id = "Digit3Id"
 Digit3.innerHTML = "3"
 keyboardId.append(Digit3);
 //4
@@ -136,7 +146,7 @@ keyboardId.append(KeyE);
 let KeyR = document.createElement('div');
 KeyR.className = "button-standard"
 KeyR.id = "KeyRId"
-KeyR.innerHTML = "у"
+KeyR.innerHTML = "к"
 keyboardId.append(KeyR);
 //е
 let KeyT = document.createElement('div');
@@ -320,7 +330,7 @@ keyboardId.append(KeyB);
 let KeyN = document.createElement('div');
 KeyN.className = "button-standard"
 KeyN.id = "KeyNId"
-KeyN.innerHTML = "n"
+KeyN.innerHTML = "т"
 keyboardId.append(KeyN);
 //ь
 let KeyM = document.createElement('div');
@@ -421,4 +431,59 @@ let howToChLang = document.createElement('p');
 howToChLang.className = "howToChLang"
 howToChLang.innerHTML = "Для смены языка нажмите левые shift + ctrl"
 document.body.append(howToChLang);
+*/
+let activeButton = 0
+document.addEventListener('keydown', function(event) {
+    activeButton = document.getElementById(`${event.code}Id`);
+    console.log(activeButton)
+    if (activeButton !== 0 && activeButton !== null) {
+    activeButton.classList.add("button-active");
+    let screen = document.querySelector(`.screen`);
+    screen.textContent = screen.textContent + event.key
+    console.log(event.getModifierState('CapsLock'))
+    }
+  });
 
+document.addEventListener('keyup', function(event) {
+    activeButton = document.getElementById(`${event.code}Id`);
+    if (activeButton !== 0 && activeButton !== null) {
+    activeButton.classList.remove("button-active");
+    }
+  });
+
+document.getElementById(`keyboardId`).addEventListener('mousedown', function(event) {
+    console.log(event.target.id)
+    if (event.target.id !== "keyboardId") {
+        activeButton = document.getElementById(`${event.target.id}`);
+        if (activeButton !== 0) {
+        activeButton.classList.add("button-active");
+        let screen = document.querySelector(`.screen`);
+        screen.textContent = screen.textContent + activeButton.textContent 
+        }
+        console.log(userLang);
+    }
+  });
+
+document.addEventListener('mouseup', function(event) {
+    if (activeButton !== 0) {
+    //let activeButton = document.getElementById(`${event.target.id}`);
+    activeButton.classList.remove("button-active");
+    }
+  });
+
+document.addEventListener('keydown', function(event) {
+    console.log(event.code)
+    if(event.code === "ShiftLeft") {
+        i2();
+        rebuilder();
+        console.log("rebuild")
+    }
+    /*activeButton = document.getElementById(`${event.code}Id`);
+    console.log(activeButton)
+    if (activeButton !== 0 && activeButton !== null) {
+    activeButton.classList.add("button-active");
+    let screen = document.querySelector(`.screen`);
+    screen.textContent = screen.textContent + event.key
+    console.log(event.getModifierState('CapsLock'))
+    }*/
+  });
