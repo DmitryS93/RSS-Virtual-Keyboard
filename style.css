@@ -74,3 +74,14 @@
 .button-active {
     background-color: red;
 }
+
+.space {
+    display: inline-block;
+    width: 10px;
+    background-color: aqua;
+}
+.tab {
+    display: inline-block;
+    width: 40px;
+    background-color: aqua;
+}

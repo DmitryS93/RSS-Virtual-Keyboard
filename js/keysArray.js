@@ -3,7 +3,7 @@ const keysArray = [
     ruSmall: 'ё',
     ruCap: 'Ё',
     enSmall: '&#180',
-    enCap: '~'
+    enCap: '&#180'
 },
 {
     ruSmall: '1',

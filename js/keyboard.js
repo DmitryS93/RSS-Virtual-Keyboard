@@ -424,7 +424,7 @@ keyboardId.append(ControlRight);
 //Подпись
 let howToChLang = document.createElement('p');
 howToChLang.className = "howToChLang"
-howToChLang.innerHTML = "Для смены языка нажмите левые shift + ctrl"
+howToChLang.innerHTML = "Для смены языка нажмите левые alt + ctrl"
 document.body.append(howToChLang);
 }
 
