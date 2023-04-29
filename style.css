@@ -1,0 +1,87 @@
+
+.keyboard-header {
+    margin: 20px auto;
+    font: bold 30px Inika;
+    text-align: center;
+}
+
+.screen {
+    width: 750px;
+    height: 100px;
+    margin: 20px auto;
+    border: 1px solid black;
+    
+    font: bold 24px Inika;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.keyboard {
+    margin: 0 auto;
+    width: 750px;
+    height: 250px;
+    border: 1px solid red;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    user-select: none;
+}
+
+.button-bkspace,
+.button-standardx2,
+.button-standard {
+    margin: 5px 5px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+
+    font: bold 18px Inika;
+    border-radius: 5px;
+    color: grey;
+    transition: 0.3s all linear; 
+}
+
+.button-standardx2:hover,
+.button-bkspace:hover,
+.button-standard:hover {
+    color: aqua;
+} 
+
+/*.button-standardx2:active,
+.button-bkspace:active,
+.button-standard:active {
+    color: red;
+} */
+
+.button-standardx2 {
+    width: 90px;
+}
+
+.button-bkspace {
+    width: 340px;
+} 
+
+.howToChLang {
+    margin: 16px auto;
+    font: normal 16px Inika;
+    text-align: center;
+}
+
+.button-active {
+    background-color: red;
+}
+
+.space {
+    display: inline-block;
+    width: 10px;
+    background-color: aqua;
+}
+.tab {
+    display: inline-block;
+    width: 40px;
+    background-color: aqua;
+}
