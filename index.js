@@ -40,7 +40,7 @@ document.addEventListener('keydown', function(event) {
           i = 2;
           capsen();
         }
-    } else if (event.key === "Alt" || event.key === "Control" || event.key === "Meta") {
+    } else if (event.key === "Alt" || event.key === "Control" || event.key === "Meta" || event.key === "Delete") {
     } else if (event.key === "ArrowUp" || event.key === "ArrowDown" || event.key === "ArrowLeft" || event.key === "ArrowRight") {
       if (event.key === "ArrowUp") {
         let newSymb = document.createElement('span');
@@ -162,17 +162,94 @@ document.getElementById(`keyboardId`).addEventListener('mousedown', function(eve
     //console.log(event.target.id)
     if (event.target.id !== "keyboardId") {
         activeButton = document.getElementById(`${event.target.id}`);
-        if (activeButton !== 0) {
+         if (activeButton !== 0) {
         activeButton.classList.add("button-active");
         let screen = document.querySelector(`.screen`);
-        screen.textContent = screen.textContent + activeButton.textContent 
+        if (event.target.id === "ShiftLeftId" || event.target.id === "ShiftRightId") {
+          //console.log("SHIFT")
+            if (i === 0) {
+              i = 1;
+              rebuilder();
+            } else if (i === 2) {
+              i = 3;
+              rebuilder();
+            }
+        } else if (event.target.id === "CapsLockId") {
+              if (i === 0) {
+                i = 1;
+                capsru();
+              } else if (i === 2) {
+                i = 3;
+                capsen();
+              } else if (i === 1) {
+                i = 0;
+                capsru();
+              } else if (i === 3) {
+                i = 2;
+                capsen();
+              }
+        } else if (event.target.id === "AltLeftId" || event.target.id === "AltRightId" || event.target.id === "ControlLeftId" || event.target.id === "ControlRightId"|| event.target.id === "MetaLeftId" || event.target.id === "DeleteId") {
+        } else if (event.target.id === "ArrowUpId" || event.target.id === "ArrowDownId" || event.target.id === "ArrowLeftId" || event.target.id === "ArrowRightId") {
+            if (event.target.id === "ArrowUpId") {
+              let newSymb = document.createElement('span');
+              newSymb.innerHTML = "&#8593"
+              screen.append(newSymb);
+            } else if (event.target.id === "ArrowDownId") {
+              let newSymb = document.createElement('span');
+              newSymb.innerHTML = "&#8595"
+              screen.append(newSymb);
+            } else if (event.target.id === "ArrowLeftId") {
+              let newSymb = document.createElement('span');
+              newSymb.innerHTML = "&#8592"
+              screen.append(newSymb);
+            } else if (event.target.id === "ArrowRightId") {
+              let newSymb = document.createElement('span');
+              newSymb.innerHTML = "&#8594"
+              screen.append(newSymb);
+            }
+          } else if (event.target.id === "BackspaceId") {
+              screen.removeChild(screen.lastChild)
+          } else if (event.target.id === "SpaceId") {
+            let newSymb = document.createElement('span');
+            newSymb.className = "space"
+            //newSymb.innerHTML = ""
+            screen.append(newSymb);
+          } else if (event.target.id === "TabId") {
+            let newSymb = document.createElement('span');
+            newSymb.className = "tab"
+            //newSymb.innerHTML = ""
+            screen.append(newSymb);
+          } else if (event.target.id === "EnterId") {
+            let newSymb = document.createElement('br');
+            //newSymb.className = "tab"
+            //newSymb.innerHTML = ""
+            screen.append(newSymb);
+          } else {
+        //screen.textContent = screen.textContent + activeButton.textContent 
+        let newSymb = document.createElement('span');
+        let buttonTextContent = activeButton.textContent
+        //console.log(buttonTextContent)
+        newSymb.innerHTML = buttonTextContent
+        screen.append(newSymb);
+          }
         }
     }
   });
 
 //отпускание кнопки мыши
 document.addEventListener('mouseup', function(event) {
+    activeButton = document.getElementById(`${event.target.id}`);
     if (activeButton !== 0) {
+      if (event.target.id === "ShiftLeftId" || event.target.id === "ShiftRightId") {
+        if (i === 1) {
+          i = 0;
+          rebuilder();
+        } else if (i === 3) {
+          i = 2;
+          rebuilder();
+        } else {
+        }
+      }
     //let activeButton = document.getElementById(`${event.target.id}`);
     activeButton.classList.remove("button-active");
     }
