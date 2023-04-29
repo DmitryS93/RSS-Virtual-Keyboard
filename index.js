@@ -135,6 +135,7 @@ runOnKeys(changeLang, "ControlLeft", "AltLeft");
 
 //Отпускание кнопки
 document.addEventListener('keyup', function(event) {
+  console.log("keyup")
     activeButton = document.getElementById(`${event.code}Id`);
     if (activeButton !== 0 && activeButton !== null) {
       if (event.key === "Shift") {
@@ -237,7 +238,7 @@ document.getElementById(`keyboardId`).addEventListener('mousedown', function(eve
 
 //отпускание кнопки мыши
 document.addEventListener('mouseup', function(event) {
-    activeButton = document.getElementById(`${event.target.id}`);
+    //activeButton = document.getElementById(`${event.target.id}`);
     if (activeButton !== 0) {
       if (event.target.id === "ShiftLeftId" || event.target.id === "ShiftRightId") {
         if (i === 1) {
