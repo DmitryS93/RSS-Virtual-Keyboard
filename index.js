@@ -8,11 +8,11 @@ keyboard()
 export {i};
 
 let activeButton = 0
-let pressed = new Set()
+//let pressed = new Set()
 
 //Нажатие кнопки
 document.addEventListener('keydown', function(event) {
-    pressed = new Set()
+    //let pressed = new Set()
     activeButton = document.getElementById(`${event.code}Id`);
     //console.log(activeButton)
     if (activeButton !== 0 && activeButton !== null) {
@@ -41,6 +41,7 @@ document.addEventListener('keydown', function(event) {
           capsen();
         }
     } else if (event.key === "Alt" || event.key === "Control" || event.key === "Meta" || event.key === "Delete") {
+      //console.log("continue")
     } else if (event.key === "ArrowUp" || event.key === "ArrowDown" || event.key === "ArrowLeft" || event.key === "ArrowRight") {
       if (event.key === "ArrowUp") {
         let newSymb = document.createElement('span');
@@ -130,7 +131,6 @@ function runOnKeys(func, ...codes) {
       pressed.delete(event.code);
     });
 }
-
 runOnKeys(changeLang, "ControlLeft", "AltLeft");
 
 //Отпускание кнопки
@@ -149,9 +149,7 @@ document.addEventListener('keyup', function(event) {
           rebuilder();
         //  console.log("shift3")
         //  console.log(i)
-        } else {
-
-        }
+        } 
       }
       activeButton.classList.remove("button-active");
     }
@@ -189,6 +187,7 @@ document.getElementById(`keyboardId`).addEventListener('mousedown', function(eve
                 capsen();
               }
         } else if (event.target.id === "AltLeftId" || event.target.id === "AltRightId" || event.target.id === "ControlLeftId" || event.target.id === "ControlRightId"|| event.target.id === "MetaLeftId" || event.target.id === "DeleteId") {
+          //console.log("continue")
         } else if (event.target.id === "ArrowUpId" || event.target.id === "ArrowDownId" || event.target.id === "ArrowLeftId" || event.target.id === "ArrowRightId") {
             if (event.target.id === "ArrowUpId") {
               let newSymb = document.createElement('span');
@@ -247,8 +246,7 @@ document.addEventListener('mouseup', function(event) {
         } else if (i === 3) {
           i = 2;
           rebuilder();
-        } else {
-        }
+        } 
       }
     //let activeButton = document.getElementById(`${event.target.id}`);
     activeButton.classList.remove("button-active");

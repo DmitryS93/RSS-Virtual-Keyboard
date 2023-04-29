@@ -3,7 +3,7 @@ import {i} from "../index.js";
 
 export default function capsen () {
 const arrayCapAndLang = ["ruSmall", "ruCap", "enSmall", "enCap"]
-let b = arrayCapAndLang[i]
+//let b = arrayCapAndLang[i]
 //Кнопки
 //1 линия
 //ё

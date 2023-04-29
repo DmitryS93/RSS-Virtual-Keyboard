@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DmitryS93/RSS-Virtual-Keyboard/issues"
   },
-  "homepage": "https://github.com/DmitryS93/RSS-Virtual-Keyboard#readme"
+  "homepage": "https://github.com/DmitryS93/RSS-Virtual-Keyboard#readme",
+  "devDependencies": {
+    "eslint": "^8.39.0"
+  }
 }

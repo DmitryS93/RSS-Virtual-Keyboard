@@ -3,7 +3,7 @@ import {i} from "../index.js";
 
 export default function rebuilder () {
 const arrayCapAndLang = ["ruSmall", "ruCap", "enSmall", "enCap"]
-let b = arrayCapAndLang[i]
+//let b = arrayCapAndLang[i]
 //Кнопки
 //1 линия
 //ё
@@ -153,5 +153,4 @@ Period.innerHTML = `${keysArray[45][arrayCapAndLang[i]]}`;
 //.
 let Slash = document.getElementById("SlashId");
 Slash.innerHTML = `${keysArray[46][arrayCapAndLang[i]]}`;
-
 }

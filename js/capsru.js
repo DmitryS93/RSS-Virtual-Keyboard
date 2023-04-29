@@ -3,7 +3,7 @@ import {i} from "../index.js";
 
 export default function capsru () {
 const arrayCapAndLang = ["ruSmall", "ruCap", "enSmall", "enCap"]
-let b = arrayCapAndLang[i]
+//let b = arrayCapAndLang[i]
 //Кнопки
 //1 линия
 //ё
@@ -111,5 +111,4 @@ Comma.innerHTML = `${keysArray[44][arrayCapAndLang[i]]}`;
 //ю
 let Period = document.getElementById("PeriodId");
 Period.innerHTML = `${keysArray[45][arrayCapAndLang[i]]}`;
-
 }
