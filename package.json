@@ -1,0 +1,22 @@
+{
+  "name": "keyboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryS93/RSS-Virtual-Keyboard.git"
+  },
+  "author": "DmitryS93",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitryS93/RSS-Virtual-Keyboard/issues"
+  },
+  "homepage": "https://github.com/DmitryS93/RSS-Virtual-Keyboard#readme",
+  "devDependencies": {
+    "eslint": "^8.39.0"
+  }
+}
